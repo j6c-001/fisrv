@@ -1,0 +1,18 @@
+[
+  {
+    "family": "Flags",
+    "fonts": [
+      {
+        "asset": "assets/fonts/FlagsColorWorld-6YnRMd.tff"
+      }
+    ]
+  },
+  {
+    "family": "Flags1",
+    "fonts": [
+      {
+        "asset": "assets/fonts/FlagsColorWorld-51lyx.ttf"
+      }
+    ]
+  }
+]
