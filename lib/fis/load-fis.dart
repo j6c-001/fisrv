@@ -65,7 +65,7 @@ class LoadFis {
       if (isLastSegment) {
         id = 99;
       }
-      if (length > 0) {
+      if (length > 0 && id <= 99) {
         race.addOrderedSegment(id, length);
       }
 

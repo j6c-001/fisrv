@@ -22,16 +22,16 @@ abstract class _PlaybackModel with Store {
         reaction((_) => [timeFactor, state], (v)  {
           rv.newPlaybackState = v[1];
           if(v[1] == PlaybackState.PLAY) {
-            video.seekTo(Duration(seconds: 17 + rv.raceManager.time.truncate()));
+            video.seekTo(Duration(seconds: 600 + rv.raceManager.time.truncate()));
             video.play();
           } else {
             video.pause();
           }
         });
   }
-
+//  https://youtu.be/WGhx60Ry75o?t=601
   YoutubePlayerController video = YoutubePlayerController(
-    initialVideoId: 'JGIdYIqOPXE',
+    initialVideoId: 'WGhx60Ry75o',
     params: YoutubePlayerParams(
         autoPlay: true,
         mute: false,

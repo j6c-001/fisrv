@@ -22,9 +22,9 @@ String toString(double d) {
   return (HH > 0 ? '$HH:' : '') + (MM > 0 ? '$MM:' : '') + '$SS.$FS';
 }
 
-final TextConfig _configNames = TextConfig(fontSize: 6, color: Colors.black54);
+final TextConfig _configNames = TextConfig(fontSize: 1, color: Colors.black54);
 final TextConfig _configTimes =
-    TextConfig(fontSize: 5, color: Colors.black54, textAlign: TextAlign.right);
+    TextConfig(fontSize: 1, color: Colors.black54, textAlign: TextAlign.right);
 
 class RenderedSplit {
   final int bib;
@@ -51,14 +51,14 @@ class RenderedSplit {
     _rank.paint(c, Offset(0, y));
     if (_flag != null) {
       c.drawImageRect(
-          _flag, _flagRect, Rect.fromLTWH(10, y + 1, 5, height - 2), _p);
+          _flag, _flagRect, Rect.fromLTWH(1, y + 1, 5, height - 2), _p);
     }
-    _bib.paint(c, Offset(25, y));
-    _name.paint(c, Offset(35, y));
-    _time.paint(c, Offset(100 - _time.width, y));
+  /*  _bib.paint(c, Offset(2, y));
+    _name.paint(c, Offset(3, y));
+    _time.paint(c, Offset(15 - _time.width, y));
     if (_diff != null) {
-      _diff.paint(c, Offset(115 - _diff.width, y));
-    }
+      _diff.paint(c, Offset(20 - _diff.width, y));
+    }*/
   }
 
   factory RenderedSplit.create(

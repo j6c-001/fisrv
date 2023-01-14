@@ -26,7 +26,7 @@ class RaceVisualizer extends BaseGame
   PlaybackState _playbackState = PlaybackState.PAUSE;
 
   RaceVisualizer() {
-    course = CourseCmp('cc-2035');
+    course = CourseCmp('cc-2215');
   }
 
 
@@ -65,9 +65,9 @@ class RaceVisualizer extends BaseGame
 
     canvas.save();
     canvas.translate(size.x / 2, size.y / 2);
-    canvas.scale(size.x / 110, -size.y / 150);
+    canvas.scale(size.x* zoom / 110, -size.y*zoom / 150);
     canvas.translate(0, 20);
-//    canvas.translate(0.5,0.5);
+    canvas.translate(xOffset,yOffset);
     course.render(canvas);
     raceManager.skiers.forEach((it) => it.render(canvas));
 
@@ -86,12 +86,15 @@ class RaceVisualizer extends BaseGame
   double yOffset = 0;
 
   void onPanUpdate(DragUpdateDetails details) {
-    xOffset += details.delta.dx;
-    yOffset += details.delta.dy;
+    xOffset -= details.delta.dx * -.1;
+    yOffset += details.delta.dy * -.1;
   }
 
+
+
+  double zoom = 1;
   void onScroll(PointerScrollEvent event) {
-    //  course.zoom -= .1 * event.scrollDelta.dy.sign;
+    zoom -= .1 * event.scrollDelta.dy.sign;
   }
 
   @override
